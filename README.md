@@ -174,13 +174,21 @@ client.connect(() => {
 
  /********************************************
   * 
-  *  Watch channel data using a device alias
+  *  Watch (subscribe) channel data using a device alias
   * 
   ********************************************/
 
   // Create an alias object for the remote device you want to access
   let device = client.accessDevice(deviceId);
 
+  // subscribe using a default poll interval of 5 secs
+  device.subscribe(channel-name, (data) => {
+    // data is the value of 'channel' data source
+    console.log(data);
+  });
+  
+  // or
+  
   // watch using a default poll interval of 5 secs
   device.watchChannelData(channel-name, (data) => {
     // data is the value of 'channel' data source
@@ -197,6 +205,19 @@ client.connect(() => {
   device.watchData(channel-name, 60000, (data) => {
     console.log(data);
   });
+  
+  // both are the same below
+  
+  // unsubscribe channel data
+  setTimeout(() => {
+    device.unsubscribe(channel-name, (data) => {
+      console.log(data); // outputs true if channel-name is valid
+    });
+    // or w/o callback
+    device.unsubscribe(channel-name);    
+  }, 5*60000);
+
+  // or
 
   // unwatch channel data
   setTimeout(() => {
@@ -216,6 +237,14 @@ client.connect(() => {
   // Provide the device id of the remote device you want to access
   // as 1st argument of watch method
 
+  // subscribe using a default poll interval of 5 secs
+  client.subscribe({id:deviceId, channel:channel-name}, (data) => {
+    // data is the value of 'channel' data source
+    console.log(data);
+  });
+
+  // or
+
   // watch using a default poll interval of 5 secs
   client.watchChannelData({id:deviceId, channel:channel-name}, (data) => {
     // data is the value of 'channel' data source
@@ -232,6 +261,19 @@ client.connect(() => {
   client.watchData({id:deviceId, channel:channel-name, interval:30000}, (data) => {
     console.log(data);
   });
+  
+  // both are the same below
+  
+  // unsubscribe channel data
+  setTimeout(() => {
+    client.unsubscribe({id:deviceId, channel:channel-name}, (data) => {
+      console.log(data); // outputs true if channel-name is valid
+    });
+    // or w/o callback
+    client.unsubscribe({id:deviceId, channel:channel-name});
+  }, 5*60000);
+  
+  // or
 
   // unwatch channel data
   setTimeout(() => {
