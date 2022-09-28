@@ -22,7 +22,7 @@
 7. [Get the available resources from a specific device](#client-request-to-get-the-available-resources-from-a-specific-device)
 8. [Connecting to other server](#connecting-to-other-m2m-server)
 9. [File Integrity Monitoring](https://github.com/EdAlegrid/file-integrity-monitoring)
-10. [Using the browser interface](https://github.com/EdAlegrid/file-integrity-monitoring)
+10. [Using the browser interface](#using-the-browser-interface)
 
 <br>
 
