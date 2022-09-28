@@ -23,9 +23,9 @@
 8. [Connecting to other server](#connecting-to-other-m2m-server)
 9. [File Integrity Monitoring](https://github.com/EdAlegrid/file-integrity-monitoring)
 10. [Using the Browser Interface](#using-the-browser-interface)
-   <!--- * [Enable Application Code Editing](#remote-application-code-editing)
-    * [Enable Application Auto Restart](#application-auto-restart)
-    * [Automatic Configuration for Code Editing and Auto Restart](#code-edit-and-auto-restart-automatic-configuration) --->
+    <!-- * [Enable Application Code Editing](#remote-application-code-editing) -->
+    <!-- * [Enable Application Auto Restart](#application-auto-restart) -->
+    * [Automatic Configuration for Code Editing and Auto Restart](#code-edit-and-auto-restart-automatic-configuration)
     * [Naming your Client Application for Tracking Purposes](#naming-your-client-application-for-tracking-purposes)
 
 <br>
