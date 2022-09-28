@@ -1422,7 +1422,7 @@ $ npm start
 ```
 For other custom nodemon configuration, please read the nodemon documentation.
 
-## Code Edit and Auto Restart Automatic Configuration
+### Code Edit and Auto Restart Automatic Configuration
 Install nodemon.
 ```js
 $ npm install nodemon
