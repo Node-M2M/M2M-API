@@ -199,7 +199,7 @@ client.connect(() => {
   let device = client.accessDevice(deviceId);
 
   // subscribe using a default poll interval of 5 secs
-  device.subscribe(channel-name, (data) => {
+  device.subscribe(topic-name, (data) => {
     // data is the value of 'channel' data source
     console.log(data);
   });
@@ -225,13 +225,13 @@ client.connect(() => {
   
   // both are the same below
   
-  // unsubscribe channel data
+  // unsubscribe to topic or channel data
   setTimeout(() => {
-    device.unsubscribe(channel-name, (data) => {
+    device.unsubscribe(topic-name, (data) => {
       console.log(data); // outputs true if channel-name is valid
     });
     // or w/o callback
-    device.unsubscribe(channel-name);    
+    device.unsubscribe(topic-name);    
   }, 5*60000);
 
   // or
@@ -284,7 +284,7 @@ client.connect(() => {
   // unsubscribe channel data
   setTimeout(() => {
     client.unsubscribe({id:deviceId, topic:topic-name}, (data) => {
-      console.log(data); // outputs true if channel-name is valid
+      console.log(data); // outputs true if topic-name is valid
     });
     // or w/o callback
     client.unsubscribe({id:deviceId, topic:topic-name});
