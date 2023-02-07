@@ -107,6 +107,18 @@ device.connect(() => {
     data.send(ds);
   });
   
+  // below are some apis' which is the same as above
+  device.dataSource(channel, (data) => {
+    let ds = DataSource();
+    data.send(ds);
+  });
+  
+  // for pub/sub data source, you can use the api below
+  device.publish(channel, (data) => {
+    let ds = DataSource();
+    data.send(ds);
+  });
+  
 });
 ```
 ### Capture Channel Data from a Client
@@ -157,6 +169,11 @@ client.connect(() => {
   // or use the shorthand api below which is the same as above
   
   client.getData({id:deviceId, channel:channel-name}, (data) => {
+    console.log(data);
+  });
+  
+  // or use a topic name instead of a channel name 
+  client.getData({id:deviceId, topic:topic-name}, (data) => {
     console.log(data);
   });
   
@@ -238,7 +255,7 @@ client.connect(() => {
   // as 1st argument of watch method
 
   // subscribe using a default poll interval of 5 secs
-  client.subscribe({id:deviceId, channel:channel-name}, (data) => {
+  client.subscribe({id:deviceId, topic:topic-name}, (data) => {
     // data is the value of 'channel' data source
     console.log(data);
   });
@@ -266,11 +283,11 @@ client.connect(() => {
   
   // unsubscribe channel data
   setTimeout(() => {
-    client.unsubscribe({id:deviceId, channel:channel-name}, (data) => {
+    client.unsubscribe({id:deviceId, topic:topic-name}, (data) => {
       console.log(data); // outputs true if channel-name is valid
     });
     // or w/o callback
-    client.unsubscribe({id:deviceId, channel:channel-name});
+    client.unsubscribe({id:deviceId, topic:topic-name});
   }, 5*60000);
   
   // or
@@ -351,7 +368,7 @@ client.connect(function(){
   client.watchData({id:100, channel:'channel-data'}, function(data){
     console.log('client.watchData', data); 
   });
-
+  
   let payload = 'hello server from client object';
 
   client.sendData({id:100, channel:'channel-data', payload:payload}, function(data){
