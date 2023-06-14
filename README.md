@@ -1484,11 +1484,11 @@ For other custom nodemon configuration, please read the nodemon documentation.
 ### Code Edit and Auto Restart Automatic Configuration
 This process will attempt to configure your package.json by adding/creating the *m2mConfig*, *nodemonConfig*, and *scripts* properties to your existing project's package.json. If your m2m project does not have an existing package.json, it will create a new one. If you have an existing package.json, it will create a backup copy package.orig.json before configuration. 
 
-Install nodemon.
+1. Install nodemon.
 ```js
 $ npm install nodemon
 ```
-Start your node process with *-config* flag.
+2. Start your node process with *-config* flag.
 
 Assuming your application filename is *device.js*, start your node application as shown below.
 ```js
@@ -1496,7 +1496,7 @@ $ node device -config
 ```
 Verify your package.json if it was properly configured.
 
-If the configuration is correct, you can now run your node process using *npm start* command.
+3. Start your application using *npm start* command.
 ```js
 $ npm start
 ```
