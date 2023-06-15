@@ -25,7 +25,7 @@
 10. [Using the Browser Interface](#using-the-browser-interface)
     <!-- * [Enable Application Code Editing](#remote-application-code-editing) -->
     <!-- * [Enable Application Auto Restart](#application-auto-restart) -->
-    * [Automatic Configuration for Code Editing and Auto Restart](#code-edit-and-auto-restart-automatic-configuration)
+    * [Manual Configuration for Code Editing and Auto Restart](#code-edit-and-auto-restart-configuration)
     * [Naming your Client Application for Tracking Purposes](#naming-your-client-application-for-tracking-purposes)
 
 <br>
@@ -1481,7 +1481,7 @@ $ npm start
 ```
 For other custom nodemon configuration, please read the nodemon documentation.
 
-### Code Edit and Auto Restart Automatic Configuration
+### Code Edit and Auto Restart Configuration
 This process will attempt to configure your package.json by adding/creating the *m2mConfig*, *nodemonConfig*, and *scripts* properties to your existing project's package.json. If your m2m project does not have an existing package.json, it will create a new one. If you have an existing package.json, it will create a backup copy package.orig.json before configuration. 
 
 1. Install nodemon.
